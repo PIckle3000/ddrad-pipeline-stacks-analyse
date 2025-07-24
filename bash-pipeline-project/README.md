@@ -133,7 +133,7 @@ bash-pipeline-project
 
 - Bash shell (Linux/Unix)
 - SLURM workload manager (for job submission)
-- Required bioinformatics tools: BWA, Stacks, SAMtools, fastq-pair
+- Required bioinformatics tools: BWA, Stacks, SAMtools
 
 ---
 
@@ -207,18 +207,16 @@ After running the main bash pipeline, you can perform population genetic analyse
 
 To launch the genetic analysis, submit the following command from the root directory:
 ```
-sbatch scripts/pipeline_analyse.sh
+sbatch pipeline_analyse.sh
 ```
 This will run the R analysis script as a SLURM job. The script will analyze the filtered VCF file and generate summary statistics, population assignments, FST, structure plots, and other results in the `results/stacks/analysis/` directory.
 
 #### 4. Output
 - Results are written in the `results/stacks/analysis/` directory (or as configured).
-- Les résultats sont écrits dans le dossier `results/stacks/analysis/` (ou selon la configuration).
 - Key output files: population assignments, diversity stats, FST, structure plots, summary report, etc.
-- Fichiers principaux : assignation des populations, statistiques de diversité, FST, graphiques de structure, rapport de synthèse, etc.
+- Some of the Analyse are on the `populations.sumstats_summary.tsv` check it for have complementary analysis.
 
 #### 5. Notes
 - If you have more than two populations, the script is robust to missing data and will include all populations in the summary tables.
-- Si vous avez plus de deux populations, le script gère les données manquantes et inclut toutes les populations dans les tableaux de synthèse.
 
 ---
